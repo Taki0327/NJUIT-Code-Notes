@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+var imagelist=new Array;
+imagelist[0]="p1.jpg";
+imagelist[1]="p2.jpg";
+imagelist[2]="p3.jpg";
+imagelist[3]="p4.jpg";
+var int=self.setInterval("test()",2000);
+function test()
+{
+    var imagechoice=Math.floor(Math.random()*imagelist.length);
+    var pic=document.getElementById("pic");
+    pic.src="./Picture/"+imagelist[imagechoice]+"";
+}
+</script>
+<body>
+    <img id="pic" src=""/> <br> <br>
+    <input type="text" width="50px" id="text1"/>
+    <br>
+    <input type="button" onclick="button();" value="随机数"/>
+</body>
+</html>

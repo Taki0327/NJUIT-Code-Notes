@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+window.onload=function(){
+    var title=document.getElementById('title');
+    var area=document.getElementById('area');
+    title.onmouseover=function(){
+        this.select();
+    }
+    title.onfocus=function() {
+        if(title.value==title.placeholder)
+        {
+            title.value="";
+        }
+    }
+    title.onblur=function() {
+        if(title.value=="")
+        {
+            title.value=title.placeholder;
+        }
+    }
+    area.onmouseover=function(){
+        this.select();
+    }
+    area.onfocus=function() {
+        if(area.value==area.placeholder)
+        {
+            area.value="";
+        }
+    }
+    area.onblur=function() {
+        if(area.value=="")
+        {
+            area.value=area.placeholder;
+        }
+    }
+}
+</script>
+标题:<input type="text" id="title" placeholder="请输入标题"/><br/>
+内容:<textarea id="area" placeholder="请输入内容"></textarea><br/>
+<input type="submit" value="提交">
+<input type="reset" value="重置">
+</body>
+</html>

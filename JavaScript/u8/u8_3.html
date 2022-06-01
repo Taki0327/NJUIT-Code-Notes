@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isSucess(){
+    var phoneReg = /^\d{11}$/;
+    var emailReg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(phoneReg.test(document.form1.elements.phone.value) && emailReg.test(document.form1.elements.email.value)){
+        return true;
+    }
+    else
+    {
+        alert("提交失败,手机号或email错误!");
+        return false;
+    }
+}
+</script>
+<form name="form1" action="success.html" onsubmit="return isSucess()" onreset="return confirm('你确认要重置吗？')">
+    手机号码:
+    <input type="text" name="phone"/>
+    <br>
+    Email:
+    <input type="text" name="email"/>
+    <br>
+    <input type="submit" />
+</form>
+</body>
+</html>

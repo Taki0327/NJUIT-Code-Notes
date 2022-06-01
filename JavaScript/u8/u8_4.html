@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+window.onload=function (){
+    var sports=document.form1.elements.sport;
+    document.form1.elements.allSports.onchange = function () {
+        var currentAllstate = this.checked;
+        document.form1.elements.reverse.checked=false;
+        for(var i=0;i<sports.length;i++){
+            sports[i].checked = currentAllstate;
+        }
+    }
+    document.form1.elements.reverse.onchange = function () {
+        document.form1.elements.allSports.checked=false;
+        for (var i = 0; i < sports.length; i++)
+        {
+            if(!sports[i].checked)
+            {
+                sports[i].checked = true;
+            }
+            else
+            {
+                sports[i].checked = false;
+            }
+        }
+    }
+}
+</script>
+<form name="form1">
+<input type="checkbox" name="allSports" value="">全选/全不选</input><BR/>
+<input type="checkbox" name="reverse" value="">反选</input><BR/>
+个人爱好:
+<br/>
+<input type="checkbox" name="sport" value="网球" checked> 网球 </input> <BR/>
+<input type="checkbox" name="sport" value="足球"> 足球 </input> <BR/>
+<input type="checkbox" name="sport" value="羽毛球"> 羽毛球 </input> <BR/>
+<input type="checkbox" name="sport" value="跑步" checked> 跑步 </input> <BR/>
+</form>
+</body>
+</html>

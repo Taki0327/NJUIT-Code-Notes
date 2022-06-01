@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+var str="";
+    window.onload=function(){
+        var imgul=location.search;
+        if(imgul.indexOf("image")!=-1)
+        {
+            imgul=imgul.substring(7);
+            str=imgul;
+            if(imgul=="p1.jpg")
+            {
+                document.getElementById('img').src="../u5/p1.jpg";
+            }
+            else if(imgul=="p2.jpg")
+            {
+                document.getElementById('img').src="../u5/p2.jpg";
+            }
+            else if(imgul=="p3.jpg")
+            {
+                document.getElementById('img').src="../u5/p3.jpg";
+            }
+        }
+        
+    }
+    function show()
+        {
+            if(str=="p1.jpg")
+                {
+                    document.getElementById('Link').search="image=p2.jpg";
+                }
+                else if(str=="p2.jpg")
+                {
+                    document.getElementById('Link').search="image=p3.jpg";
+                }
+                else if(str=="p3.jpg")
+                {
+                    document.getElementById('Link').search="image=p1.jpg";
+                }
+        }
+</script>
+<script src="u6_3.js"></script>
+<body>
+    <p><button onclick="openWin()">打开窗口</button></p>
+    <h1 id="text1"></h1>
+    <a id="Link" href="u6.html?image=p1.jpg" onclick="show()">
+        <img id="img" src="../u5/p1.jpg" />
+        </a>
+</body>
+</html>

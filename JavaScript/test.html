@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数_3</title>
+</head>
+<body>
+<script>
+    var n = 0;
+    var succcount = 0;
+    var iscontinue = true;
+    var sj=()=>Math.round(Math.random()*8+1);
+    var luckgame = function () {
+        var num1 = sj();
+        var num2 = sj();
+        var num3 = sj();
+
+        var result = "";
+
+        if (num1 === 8 || num2 === 8 || num3 === 8) {
+            result = "赢";
+            succcount ++;
+        }
+        else
+            result = "输";
+
+        n++;
+
+        var succpercent = succcount / n * 100;
+
+        iscontinue = confirm(`${num1}${num2}${num3}\n${result}\n胜率${succpercent}%,继续吗？`)
+    }
+
+    while (iscontinue)
+        luckgame();
+</script>
+</body>
+</html>

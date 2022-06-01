@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="module">
+            import * as method from "./u1001.js";
+            document.getElementById("b1").onclick=function(){
+                method.cou();
+                document.getElementById("display").innerHTML=method.Pounds();
+         }
+    </script>
+</head>
+<body>
+<input type="text" id="sz" placeholder="请输入要转换的数字(默认kg)"/><br/>
+<select id="sc" multiple size="3">
+    <option value="kg" selected>公斤</option>
+    <option value="yb">英镑</option>
+</select><br>
+<button id="b1">提交</button>
+<div id="display"></div>
+</body>
+</html>

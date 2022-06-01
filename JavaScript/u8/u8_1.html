@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+var genders="";
+var clases="";
+var sports=[];
+window.onload = function () {
+      document.forms.form1.onsubmit=function(){
+         for (var i in document.forms[0].elements.gender) { 
+             if(document.forms[0].elements.gender[i].checked)
+             {
+                genders=document.forms[0].elements.gender[i].value;
+                break;
+             }
+         }
+         for (var i in document.forms[0].elements.clas) { 
+             if(document.forms[0].elements.clas[i].checked)
+             {
+                clases=document.forms[0].elements.clas[i].value;
+                break;
+             }
+         }
+         for (var i in document.forms[0].elements.sport) { 
+             if(document.forms[0].elements.sport[i].checked)
+             {
+                sports.push(document.forms[0].elements.sport[i].value);
+             }
+         }
+         alert("姓名："+clases+" 年龄："+genders+" 喜欢的运动："+sports)
+      }
+  }
+</script>
+<body>
+    <form name="form1">
+        性别：<input type="radio" name="gender" value="男" checked>男
+        <input type="radio" name="gender" value="女">女<BR/>
+        姓名：<input type="radio" name="clas" value="张学友" checked>张学友
+        <input type="radio" name="clas" value="刘德华" >刘德华<BR/>
+        你喜欢的运动:
+        <input type="checkbox" name="sport" value="网球" checked> 网球 </input> <BR/>
+        <input type="checkbox" name="sport" value="足球"> 足球 </input> <BR/>
+        <input type="checkbox" name="sport" value="羽毛球"> 羽毛球 </input> <BR/>
+        <input type="checkbox" name="sport" value="跑步" checked> 跑步 </input> <BR/>
+        <input type="submit">
+    </form>    
+</body>
+</html>
